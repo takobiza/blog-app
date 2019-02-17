@@ -1,0 +1,14 @@
+
+<div class="container">
+  <div class="row">
+      <%= render @blogs %>
+  </div>
+
+  <div class = mode>
+  <%= render 'model' %>
+  </div>
+
+  <div class="page">
+    <%= paginate @blogs%>
+  </div>
+</div>

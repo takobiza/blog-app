@@ -1,0 +1,72 @@
+<div id="modal1" class="modal modal-fixed-footer">
+  <%= render 'form' %>
+</div>
+
+<div id="signupmodal"  class="modal modal-fixed-footer">
+  <div class="container">
+  <h2>Sign up</h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {:id => "form_id" }) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "form-control validate[required, custom[email], maxSize[20]]"%>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" , class: 'form-control validate[required, minSize[6], maxSize[20]]', id: "passwd"%>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control validate[required, equals[passwd]]', id: "re_passwd"%>
+    </div>
+  <div class="center-align">
+    <div class="actions waves-effect waves-light btn green accent-1">
+      <%= f.submit "Sign up",{class: "colorwhite"} %>
+    </div>
+  </div>
+  <% end %>
+
+  </div>
+</div>
+
+<div id="siginpmodal"  class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <div class="row">
+      <div class="row">
+        <div class="input-field col s12">
+          <div class="center-align">
+          <h2>Log in</h2>
+          </div>
+
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password %><br />
+              <%= f.password_field :password, autocomplete: "current-password" %>
+            </div>
+          </div>
+        </div>
+
+    <div class="modal-footer">
+      <div class="center-align">
+        <div class="actions waves-effect waves-light btn green accent-1 flexd">
+          <%= f.submit "Log in",{class: "colorwhite"} %>
+        </div>
+        <%= link_to "Twiiterでログイン", user_twitter_omniauth_authorize_path ,class: :"waves-effect waves-light btn green accent-1"%>
+      </div>
+    </div>
+  <% end %>
+    </div>
+  </div>
+</div>

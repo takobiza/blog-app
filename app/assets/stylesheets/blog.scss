@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Tegaki';
+  src: font-url('ShigotoMemogaki-Regular-1-01.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  font-family: 'Tegaki';
+  font-size: 30px;
+}
+.navbar-fixed{
+  margin-right: 50px ;
+}
+
+.waves-light{
+  background-color: #b9f6ca;
+}
+
+header{
+  padding-bottom: 20px;
+}
+
+// .modal-footer input{
+//   color: white !important;
+// }
+
+textarea {
+    height: 25rem !important;
+}
+
+.field{
+  padding-top: 30px;
+}
+
+.flash {
+  color: white;
+  text-align: center;
+  &__alert{
+    background-color: #F45866;
+  }
+  &__notice {
+    background-color: #0AD3FF;
+  }
+}
+
+.colorwhite{
+    color: white !important;
+}
+
+.flexd{
+
+}

@@ -1,0 +1,20 @@
+<div class="modal-content">
+  <div class="row">
+      <%= form_for @blog, :html => {:class => "col s12"} do |f|%>
+        <div class="row">
+            <div class="input-field col s12">
+              <%= f.text_area :content, class: :"materialize-textarea", id: :textarea2, maxlength: :"840", wrap: :"hard"%>
+              <%= f.label :"本文" , for: :textarea2%>
+            </div>
+        </div>
+         <div class="modal-footer">
+            <div class="center-align">
+              <button class="modal-close waves-effect waves-light btn green accent-1 text-white" type="submit" name="action">
+                <%= f.submit '投稿する'%>
+                <i class="material-icons right ">send</i>
+              </button>
+            </div>
+        </div>
+      <% end %>
+  </div>
+</div>
