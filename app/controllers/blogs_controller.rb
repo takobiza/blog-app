@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   before_action :blog_find, only:[:edit, :update, :destroy]
 
   def index
-    @blogs = Blog.page(params[:page]).per(5)
+    @blogs = Blog.page(params[:page]).per(5).order("updated_at DESC")
     @user = User.new
   end
 
@@ -17,6 +17,7 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.create(blog_params)
+    flash[:notice] = "投稿しました"
     redirect_to blogs_path
   end
 
@@ -30,6 +31,7 @@ class BlogsController < ApplicationController
 
   def update
     @blog.update(blog_params)
+    flash[:notice] = "更新しました"
     redirect_to blogs_path(params[:page])
   end
 
