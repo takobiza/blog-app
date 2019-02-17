@@ -29,7 +29,8 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|index: true, null: false|
+|uid|string||
+|provider|string||
 
 ### Association
 - has_many :blogs
